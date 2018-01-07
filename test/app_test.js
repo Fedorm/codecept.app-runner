@@ -1,4 +1,3 @@
-
 Feature('Dummy test');
 
 Scenario('User enters homepage', (I) => {
