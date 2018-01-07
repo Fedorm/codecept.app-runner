@@ -1,0 +1,11 @@
+{
+  "name": "codecept.app_runner",
+  "version": "0.0.1",
+  "description": "Universal app runner for codeceptJS.",
+  "main": "index.js",
+  "author": "jploskonka",
+  "license": "MIT",
+  "dependencies": {
+    "codeceptjs": "^1.1.1"
+  }
+}
