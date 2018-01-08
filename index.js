@@ -26,7 +26,6 @@ class AppManager {
   }
 
   close() {
-    this.app.kill();
     psTree(this.app.pid, (err, children) => {
       spawn('kill', ['-9'].concat(this.app.pid, children.map(p => p.PID)));
     })

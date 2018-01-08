@@ -7,6 +7,9 @@ module.exports.config = {
   helpers: {
     Puppeteer: {
       url: "http://localhost:8888",
+      chrome: {
+        args: ["--no-sandbox"]
+      }
     }
   },
   include: {},
