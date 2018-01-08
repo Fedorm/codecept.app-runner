@@ -1,6 +1,6 @@
 {
   "name": "codecept.app-runner",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Universal app runner for codeceptJS.",
   "main": "index.js",
   "author": "jploskonka",
