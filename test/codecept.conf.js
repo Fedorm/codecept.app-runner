@@ -1,4 +1,4 @@
-const { startApp, closeApp } = require('codecept.app-runner');
+const { startApp } = require('codecept.app-runner');
 
 module.exports.config = {
   tests: "./*_test.js",
@@ -17,9 +17,6 @@ module.exports.config = {
       appCommand: "node app.js",
       appPath: __dirname
     }, done);
-  },
-  teardown: function(done) {
-    closeApp(done);
   },
   mocha: {},
   name: "test",

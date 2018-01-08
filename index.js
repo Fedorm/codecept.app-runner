@@ -1,9 +1,10 @@
 const appManager = require('./appManager');
+const { event }  = require('codeceptjs');
 
 module.exports.startApp = function(config, done) {
-  appManager.start(config, done);
-}
+  event.dispatcher.on(event.all.result, function() {
+    appManager.close();
+  })
 
-module.exports.closeApp = function(done) {
-  appManager.close(done);
+  appManager.start(config, done);
 }

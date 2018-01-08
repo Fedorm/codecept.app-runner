@@ -11,5 +11,8 @@
   },
   "scripts": {
     "test": "cd test && yarn test"
+  },
+  "peerDependencies": {
+    "codeceptjs": "^1.1.1"
   }
 }
