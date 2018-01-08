@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/jploskonka/codecept.app-runner.svg?style=svg)](https://circleci.com/gh/jploskonka/codecept.app-runner)
 # codeceptjs.app-runner
 [CodeceptJS](http://codecept.io/) plugin to automatically run your application
 before tests.
