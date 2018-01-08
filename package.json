@@ -8,5 +8,8 @@
   "dependencies": {
     "ps-tree": "^1.1.0",
     "tcp-port-used": "^0.1.2"
+  },
+  "scripts": {
+    "test": "cd test && yarn test"
   }
 }
