@@ -11,11 +11,10 @@ $ yarn add --dev codecept.app-runner
 $ npm install --save-dev codecept.app-runner
 ```
 
-Package provides two methods: `startApp` and `closeApp` which you need to invoke
-in `bootstrap` and `teardown` hooks respectively. In `codecept.conf.js`:
+Then invoke `startApp` method provided by plugin inside `bootstrap` hook:
 
 ``` js
-const { startApp, closeApp } = require('codecept.app-runner');
+const { startApp } = require('codecept.app-runner');
 
 module.exports.config = {
   // your usual codecept config
@@ -27,25 +26,32 @@ module.exports.config = {
       appCommand: "node app.js",
       appPath: __dirname
     }, done);
-  },
-  teardown: function(done) {
-    closeApp(done);
-  },
+  }
 }
 ```
 
-*IMPORTANT!*
-To use this package you have to use `js` version of Codecept's configuration
-file, it won't work with `.json` one. Check out
-[docs](http://codecept.io/configuration/#dynamic-configuration).
+## API
+`startApp` method accepts two parameters, first one is `config` object and
+second is `done` callback which is called in order for Codecept to know when
+it's time to run tests.
+
+### config
+- `host` - host on which Codecept should wait for application \*
+- `port` - port on which Codecept should wait for application \*
+- `appCommand` - command executed to run application
+- `appPath` - absolute path to directory where application should be run
+
+\* `host` and `port` options are used only to wait for URL to start responding
+to requests. Those *are not* passed to appCommand in any way. Of course this
+needs to match host and port of running application.
 
 ## Example
 You can see sample configuration [here](./test/codecept.conf.js)
 
 ## How it works?
-Plugin is basically code from [this
+Plugin is slightly improved code from [this
 tutorial](http://codenroll.it/post/how-to-run-app-with-codecept-js/) wrapped
-into npm package. Check it out if you want to know what's going on inside.
+into npm package. Check it out if you want to know what's going on inside ;-)
 
 ## License
 MIT © [jploskonka](http://codenroll.it)
