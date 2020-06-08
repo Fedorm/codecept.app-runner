@@ -4,7 +4,7 @@ const psTree                  = require('ps-tree');
 const { event }               = require('codeceptjs');
 
 function waitForApp(config, callback) {
-  waitUntilUsedOnHost(config.port, config.host, 500, 6000)
+  waitUntilUsedOnHost(config.port, config.host, 500, 60000)
     .then(() => {
       console.log('Application started, running tests.');
       callback();
